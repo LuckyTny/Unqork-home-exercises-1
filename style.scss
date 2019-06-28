@@ -1,0 +1,278 @@
+@mixin phone {
+  @media screen and (max-width: 600px){
+    @content;
+  }
+}
+@mixin sm-screen {
+  @media screen and (max-width: 1200px){
+    @content;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  flex: 1;
+  font-size: 2rem;
+  font-family: helvetica;
+  letter-spacing: 0.1em;
+  border-top: 13px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 100px 50px 75px; 
+  
+  .header-container {
+    display: flex;
+    flex-direction: column; 
+    .header {
+      color: #000;
+      font-family: "Helvetica Neue";
+      font-size: 2rem;
+      font-weight: 700;
+     }
+    .sub-header {
+      margin-top: 8px;
+      color: #757575;
+      font-family: "Helvetica Neue";
+      font-size: 1.125rem; }
+    }
+  .personal {
+    display: flex;
+    flex-direction: column; 
+    .personal-header {
+      color: #000;
+      font-family: "Helvetica Neue";
+      font-size: 1.75rem;
+      font-weight: 700; }  
+    .personal-subheader {
+      margin-top: 5px;
+      color: #797979;
+      font-family: Helvetica;
+      font-size: 1.125rem; 
+    }
+  }
+
+  .name-fields {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 0; 
+    .input-container {
+       display: flex;
+       flex-direction: column; 
+      .input-label {
+        color: #000;
+        font-family: "Helvetica Neue";
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 0.75rem; 
+      }
+      .input {
+        margin-top: 0.75rem;
+        padding-left: 0.75rem;
+        font-family: "Helvetica Neue";
+        font-size: 1rem;
+        line-height: 26px;
+        width: 315px;
+        height: 48px;
+        background-color: #d8d8d8;
+        border-style: none;
+        border-bottom: 2px solid #000;
+        
+        @include sm-screen(){
+          width: 100%;
+          margin: 1.75rem 0; 
+        } 
+      }
+    }
+    @include sm-screen(){
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .gender-label {
+    color: #000;
+    font-family: "Helvetica Neue";
+    font-size: 1rem;
+    font-weight: 700; 
+  }
+  .radio-label {
+    color: #000;
+    font-family: "Helvetica Neue";
+    font-size: 1rem;
+    line-height: 0.5rem; 
+  }
+  .address {
+    margin-top: 40px;
+    margin-bottom: 60px; 
+    .address-label {
+      display: flex;
+      flex-direction: column;
+      color: #d8004e;
+      font-family: "Helvetica Neue";
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .input-address {
+      margin: 0.75rem 0 0 0;
+      padding-left: 0.75rem;
+      font-family: "Helvetica Neue";
+      font-size: 1rem;
+      line-height: 26px;
+      width: 470px;
+      height: 48px;
+      color: #d8004e;
+      background-color: #d8d8d8;
+      border-style: none;
+      border-bottom: 2px solid #d8004e;
+      
+      @include sm-screen(){
+        width: 100%;
+        margin: 1.75rem 0; 
+      } 
+    }
+    .zip-code {
+      margin-top: 0.75rem;
+      color: #d8004e;
+      font-family: "Helvetica Neue";
+      font-size: 14px; 
+    }
+  }
+  .btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include phone(){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.75rem 0; 
+    }
+
+    .button-previous {
+      color: #000;
+      font-family: "Helvetica Neue";
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: none;
+      border: none;
+      cursor: pointer; 
+    }
+    
+    .button-previous::before {
+      content:'';
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg); 
+    }
+
+    
+    .button-cancel {
+      width: 140px;
+      height: 50px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+      border-radius: 10px;
+      border: 1px solid #666;
+      background-color: #fff;
+      color: #000;
+      font-family: "Helvetica Neue";
+      font-size: 14px;
+      font-weight: 700;
+      margin-right: 40px;
+      cursor: pointer; 
+
+      @include phone(){
+        margin: 0.75rem 0; 
+      }
+    }
+    
+    .button-next {
+      width: 139px;
+      height: 50px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+      border-radius: 10px;
+      background-color: #9b9b9b;
+      color: #fff;
+      font-family: "Helvetica Neue";
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+
+      @include phone(){
+        margin: 0.75rem 0; 
+      }
+    }
+
+    
+
+  }
+}
+  
+/* Radio Buttons Styles */
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px; 
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block; 
+}
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff; 
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #9b9b9b;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%; 
+}
+
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0); 
+}
+
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1); 
+}
+
+/*# sourceMappingURL=style.css.map */

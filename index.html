@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unqork Home Exercise Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="logo">
+    <p>LOGO</p>
+  </div>
+<main>
+  <div class="header-container">
+    <h1 class="header">
+    Page header here showing very long text
+    </h1>
+    <p class="sub-header">
+    Page header subcopy please fill out the below
+    </p>
+  </div>
+<form id=userInfo action = "#">
+  <div class="personal"> 
+    <h2 class="personal-header">
+    Personal Info
+    </h2>
+    <p class="personal-subheader">
+      Section header subcopy can be as long as you want too
+    </p>
+  </div> 
+  <div class="name-fields">
+    <div class="input-container">
+      <label class="input-label" for="firstName">First Name </label>
+      <input class="input" id="firstName" type="text" name="firstname">
+    </div>
+    <div class="input-container">
+      <label class="input-label" for="middleName">Middle Name</label>
+      <input class="input" id="middleName" type="text" name="middlename">
+    </div>
+    <div class="input-container">
+      <label class="input-label" for="lastName">Last Name</label>
+      <input class="input" id="lastName" type="text" name="lastname">
+    </div>
+  </div>
+  <div class="gender">
+      <span class="gender-label">Gender</span>
+        <p>
+        <input type="radio" id="male" name="radio-group" >
+        <label class="radio-label" for="male">Male</label>
+        </p>
+        <p>
+          <input type="radio" id="female" name="radio-group" checked>
+          <label class="radio-label" for="female">Female</label>
+        </p>
+    </div>
+    <div class="address">
+    
+      <label class="address-label" for="address">Address </label>
+      <input class="input-address" id="address" type="text" name="address">
+    
+      <p class="zip-code">Zipcode is incorrect</p>
+    </div>
+</form>  
+    <div class="btn-group">
+      <button class="button-previous">
+        PREVIOUS
+      </button>
+      <div class="btn-group">
+        <button class="button-cancel">CANCEL</button>
+        <button class="button-next" type="submit" form="userInfo">NEXT</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
